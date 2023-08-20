@@ -1,0 +1,2 @@
+pandas
+kivy 2.1.0
