@@ -1,0 +1,115 @@
+Interface:
+
+    Screen:
+        name: 'user_id'
+        BoxLayout:
+
+            BoxLayout:
+                size_hint: .5, 1
+
+                Label:
+                    text_size: self.size
+                    halign: 'right'
+                    valign: 'middle'
+                    text: 'User ID:'
+
+            BoxLayout:
+
+                AnchorLayout:
+
+                    TextInput:
+                        id: user_id
+                        multiline: False
+                        size_hint: 1, None
+                        height: 31
+                        hint_text: 'User ID'
+                        background_color: [0, 0, 0, 1]
+                        cursor_color: [1, 1, 1, 1]
+                        foreground_color: [1, 1, 1, 1]
+
+                AnchorLayout:
+                    anchor_x:'left'
+                    anchor_y:'center'
+
+                    Button:
+                        size_hint: .6, None
+                        height: 31
+                        text: 'Tovább'
+                        on_release: root.btn_continue()
+
+    Screen:
+        name: 'keywords'
+
+        BoxLayout:
+            BoxLayout:
+                size_hint: .35, 1
+
+                Label:
+                    text_size: self.size
+                    halign: 'right'
+                    valign: 'middle'
+                    text: 'Keywords:'
+
+            BoxLayout:
+
+                AnchorLayout:
+                    size_hint: .5, 1
+
+                    TextInput:
+                        id: keywords
+                        multiline: False
+                        size_hint: 1, None
+                        height: 31
+                        hint_text: 'Keywords separeted by comma'
+                        background_color: [0, 0, 0, 1]
+                        cursor_color: [1, 1, 1, 1]
+                        foreground_color: [1, 1, 1, 1]
+
+                BoxLayout:
+                    size_hint: .4, 1
+
+                    AnchorLayout:
+
+                        Button:
+                            size_hint: .9, None
+                            height: 31
+                            text: 'Keres'
+                            on_release: root.btn_search()
+
+                    AnchorLayout:
+
+                        Button:
+                            size_hint: .9, None
+                            height: 31
+                            text: 'Vissza'
+                            on_release: root.btn_back()
+
+    Screen:
+        name: 'results'
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            ScrollView:
+                size_hint: 1, 0.9
+                bar_width: dp(5)
+
+                GridLayout:
+                    id: links
+                    cols: 1
+                    spacing: dp(10)
+                    padding: [dp(10), dp(20), dp(10), dp(10)]
+                    size_hint_y: None
+                    height: self.minimum_height
+
+
+            Button:
+                size_hint: 1, None
+                height: 31
+                text: 'Új keresés'
+                on_release: root.btn_back()
+
+<Popup>
+    title: 'Hiba!'
+    title_align: 'center'
+    size_hint: .6, .5
