@@ -112,14 +112,14 @@ class Interface(ScreenManager):
         popup.open()
 
     def is_user(self):
-        #megvizsgálja, hogy a megadott User ID-nak van e hozzáférési jogosultsága
+        # megvizsgálja, hogy a megadott User ID-nak van e hozzáférési jogosultsága
         users = self.datas["user"].to_list()
         user_list = [user for user in users if isinstance(user, str)]
         if self.ids.user_id.text in user_list:
             return True
 
     def is_empty(self, to_check):
-        #megvizsgálja, hogy a mező ki lett e töltve
+        # megvizsgálja, hogy a mező ki lett e töltve
         if len(to_check) == 0:
             return True
 
