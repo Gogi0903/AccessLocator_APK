@@ -50,49 +50,60 @@ Interface:
         name: 'keywords'
 
         BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                id: welcome_text
+                size_hint: 1, .4
+                text_size: self.size
+                halign: 'center'
+                valign: 'bottom'
 
             BoxLayout:
-                size_hint: .35, 1
-
-                Label:
-                    text_size: self.size
-                    halign: 'right'
-                    valign: 'middle'
-                    text: 'Keywords:'
-
-            BoxLayout:
-
-                AnchorLayout:
-                    size_hint: .5, 1
-
-                    TextInput:
-                        id: keywords
-                        multiline: False
-                        size_hint: 1, None
-                        height: 31
-                        hint_text: 'Keywords separeted by comma'
-                        background_color: [0, 0, 0, 1]
-                        cursor_color: [1, 1, 1, 1]
-                        foreground_color: [1, 1, 1, 1]
+                size_hint: 1, .6
 
                 BoxLayout:
-                    size_hint: .4, 1
+                    size_hint: .35, 1
+
+                    Label:
+                        text_size: self.size
+                        halign: 'right'
+                        valign: 'middle'
+                        text: 'Keywords:'
+
+                BoxLayout:
 
                     AnchorLayout:
+                        size_hint: .5, 1
 
-                        Button:
-                            size_hint: .9, None
+                        TextInput:
+                            id: keywords
+                            multiline: False
+                            size_hint: 1, None
                             height: 31
-                            text: 'Keres'
-                            on_release: root.btn_search()
+                            hint_text: 'Keywords'
+                            background_color: [0, 0, 0, 1]
+                            cursor_color: [1, 1, 1, 1]
+                            foreground_color: [1, 1, 1, 1]
 
-                    AnchorLayout:
+                    BoxLayout:
+                        size_hint: .4, 1
 
-                        Button:
-                            size_hint: .9, None
-                            height: 31
-                            text: 'Vissza'
-                            on_release: root.btn_back()
+                        AnchorLayout:
+
+                            Button:
+                                size_hint: .9, None
+                                height: 31
+                                text: 'Keres'
+                                on_release: root.btn_search()
+
+                        AnchorLayout:
+
+                            Button:
+                                size_hint: .9, None
+                                height: 31
+                                text: 'Vissza'
+                                on_release: root.btn_back()
 
     Screen:
         name: 'results'

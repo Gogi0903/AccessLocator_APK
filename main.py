@@ -133,6 +133,8 @@ class Interface(ScreenManager):
 
     def btn_continue(self):
         self.user = self.ids.user_id.text
+        self.ids.welcome_text.text = (f'Üdvözöllek {self.user}!\n'
+                                 f'Kérlek add meg a keresendő kulcsszavakat vesszővel eléválasztva!')
         if not self.is_empty(self.user):
             if self.is_user():
                 self.user_links = self.links_sec_lvl()
