@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
@@ -11,6 +12,7 @@ SHEET_ID = "1RPP1n2KIPHTGvyLrPNcr_Hx8-JGMCp6J8F71woej33I"
 SHEET_NAME = "Munkalap1"
 URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}"
 
+Window.size = (480, 800)
 
 def get_datas():
     # kiolvassa az adatokat az excelből
